@@ -22,7 +22,6 @@ class UserInput(BaseModel):
     first_name: str
     last_name: str
     birthday: str
-    email: str
 
 @app.post("/generate")
 async def generate_reading(data: UserInput):
