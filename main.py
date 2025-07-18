@@ -30,7 +30,7 @@ async def generate_reading(data: UserInput):
     )
 
     try:
-        response = client.chat.completions.create(
+        response = client.ChatCompletions.create(
             model="gpt-4",
             messages=[{"role": "user", "content": prompt}],
         )
