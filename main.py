@@ -32,7 +32,7 @@ class UserInput(BaseModel):
 
 @app.post("/generate")
 async def generate_reading(data: UserInput):
-    prompt = f"Give a fun but insightful astrology + numerology + Chinese zodiac cosmic reading for:
+    prompt = f"Give a fun but insightful astrology + numerology + Chinese zodiac cosmic reading for:"
 Name: {data.first_name} {data.last_name}
 Birthday: {data.birthday}"
     response = openai.ChatCompletion.create(
