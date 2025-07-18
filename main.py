@@ -37,7 +37,7 @@ async def generate_reading(data: UserInput):
     f"Name: {data.first_name} {data.last_name}\n"
     f"Birthday: {data.birthday}"
 )
-    response = openai.ChatCompletion.create(
+response = openai.ChatCompletion.create(
         model="gpt-4",
         messages=[{"role": "user", "content": prompt}],
     )
