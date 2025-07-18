@@ -31,7 +31,7 @@ async def generate_reading(data: UserInput):
     )
 
     try:
-        response = client.chat.completions.create(
+        response = openai.chat.completions.create(
             model="gpt-4o",
             messages=[{"role": "user", "content": prompt}],
         )
