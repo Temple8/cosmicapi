@@ -14,10 +14,10 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# ENV setup
-OPENAI_API_KEY = "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"
-openai.api_key = OPENAI_API_KEY
+# ENV setup — replace with actual OpenAI key
+openai.api_key = "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"
 
+# Input model (email removed as requested)
 class UserInput(BaseModel):
     first_name: str
     last_name: str
@@ -31,10 +31,15 @@ async def generate_reading(data: UserInput):
         f"Birthday: {data.birthday}"
     )
 
-    response = openai.ChatCompletion.create(
-        model="gpt-4",
-        messages=[{"role": "user", "content": prompt}],
-    )
+    try:
+        response = openai.ChatCompletion.create(
+            model="gpt-4",
+            messages=[{"role": "user", "content": prompt}],
+        )
+        result = response['choices'][0]['message']['content']
+        return {"result": result}
 
-    result = response['choices'][0]['message']['content']
-    return {"result": result}
+    except Exception as e:
+        # This will help you debug if something goes wrong
+        return {"error": str(e)}
+
