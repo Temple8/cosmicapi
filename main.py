@@ -14,6 +14,7 @@ app.add_middleware(
 )
 
 # OpenAI setup
+import openai
 openai.api_key = "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"  # 👈 your key here
 
 class UserInput(BaseModel):
@@ -30,11 +31,11 @@ async def generate_reading(data: UserInput):
     )
 
     try:
-        response = client.ChatCompletions.create(
-            model="gpt-4",
+        response = openai.ChatCompletions.create(
+            model="gpt-4o",
             messages=[{"role": "user", "content": prompt}],
         )
-        result = response.choices[0].message.content
+        result = response['choices'][0]['message']['content']
         return {"result": result}
 
     except Exception as e:
