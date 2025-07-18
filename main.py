@@ -2,7 +2,6 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import openai
-import os
 
 app = FastAPI()
 
@@ -14,10 +13,9 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# ENV setup — replace with actual OpenAI key
-openai.api_key = "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"
+# OpenAI setup
+client = openai.OpenAI(api_key="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")  # 👈 your key here
 
-# Input model (email removed as requested)
 class UserInput(BaseModel):
     first_name: str
     last_name: str
@@ -32,14 +30,12 @@ async def generate_reading(data: UserInput):
     )
 
     try:
-        response = openai.ChatCompletion.create(
+        response = client.chat.completions.create(
             model="gpt-4",
             messages=[{"role": "user", "content": prompt}],
         )
-        result = response['choices'][0]['message']['content']
+        result = response.choices[0].message.content
         return {"result": result}
 
     except Exception as e:
-        # This will help you debug if something goes wrong
         return {"error": str(e)}
-
