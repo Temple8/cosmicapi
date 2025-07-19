@@ -34,7 +34,7 @@ async def generate_reading(data: UserInput):
          f"1. A compelling summary of key personality traits based on name and birthdate.\n"
          f"2. An accurate numerology analysis, showing calculations clearly based on the {data.birthday}. Include the Life Path, Expression/Destiny Number, and current Pinnacle Cycle if possible.\n"
          f"3. A Chinese Zodiac breakdown with animal sign traits and how they combine with Western signs.\n"
-         f"4. A detailed month-by-month forecast for the next 3 months starting from {current_date.strftime('%B %Y')}, covering Love, Career, and Personal Growth.\n"
+         f"4. A detailed month-by-month forecast for the next 3 months starting from {current_date}, covering Love, Career, and Personal Growth.\n"
          f"5. Finish with empowering, heartfelt closing guidance that encourages the user to embrace their unique gifts.\n\n"
          f"- Full name: {data.first_name} {data.last_name}\n"
          f"- Date of birth: {data.birthday}\n\n"
