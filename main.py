@@ -25,9 +25,12 @@ class UserInput(BaseModel):
 @app.post("/generate")
 async def generate_reading(data: UserInput):
     prompt = (
-        f"Give a fun but insightful astrology + numerology + Chinese zodiac cosmic reading for:\n"
-        f"Name: {data.first_name} {data.last_name}\n"
-        f"Birthday: {data.birthday}"
+        f"You are a highly skilled astrologer and metaphysical branding guide known for your pinpoint accuracy and insightful, engaging style. "
+        f"Deliver a detailed and personalized cosmic forecast using astrology, numerology, and the Chinese zodiac. "
+        f"Blend spiritual depth with fun, modern language. Focus on revealing key personality traits, life path insights, and unique energetic strengths based on:\n"
+        f"- Full name: {data.first_name} {data.last_name}\n"
+        f"- Date of birth: {data.birthday}\n"
+        f"Speak with both precision and flair—like a wise, intuitive guide who also knows how to make it feel magical and exciting."
     )
 
     try:
