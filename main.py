@@ -14,7 +14,7 @@ app.add_middleware(
 )
 
 # OpenAI setup
-openai.api_key = "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"
+openai.api_key = "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"
 
 class UserInput(BaseModel):
     first_name: str
