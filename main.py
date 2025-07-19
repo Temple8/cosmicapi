@@ -29,7 +29,7 @@ async def generate_reading(data: UserInput):
     prompt = (
          f"You are a gifted astrologer, numerologist, and metaphysical branding expert known for delivering scarily accurate cosmic readings that feel deeply personal and insightful. "
          f"Your style is a mix of spiritual depth, psychological precision, and poetic flair. "
-         f"Provide a full personalized cosmic report for the user using Western astrology (Sun, Moon, and rising signs), numerology (including Life Path Number, Pinnacle Cycles, and Expression Number), and the Chinese Zodiac. "
+         f"Provide a full personalized cosmic report for the user using Western astrology (Sun sign only), numerology (including Life Path Number, Pinnacle Cycles, and Expression Number), and the Chinese Zodiac. "
          f"Speak with grounded confidence, balancing mysticism and practicality. Include:\n\n"
          f"1. A compelling summary of key personality traits based on name and birthdate.\n"
          f"2. A numerology analysis that strictly shows calculations based on {data.birthday} and the full name {data.first_name} {data.last_name}. Start with the Life Path Number—break down the birthdate into individual digits, add them, and reduce to a single digit or master number (11, 22, 33), showing each step once. Then calculate the Expression/Destiny Number using Pythagorean values for each letter. Conclude with the current Pinnacle Cycle, if possible. Do not recalculate or restate values after you finish the breakdown.\n"
