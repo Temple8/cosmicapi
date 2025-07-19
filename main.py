@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import openai
+import os  # ✅ Add this to read from environment
 
 app = FastAPI()
 
@@ -13,8 +14,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# OpenAI setup
-openai.api_key = "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"
+# OpenAI setup (read key from environment)
+openai.api_key = os.getenv("OPENAI_API_KEY")  # ✅ Safe and clean
 
 class UserInput(BaseModel):
     first_name: str
