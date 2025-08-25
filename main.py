@@ -34,7 +34,7 @@ async def generate_reading(data: UserInput):
          f"1. A compelling summary of very detailed and scarily accurate key personality traits based on name and birthdate.\n"
          f"2. A numerology analysis that strictly shows calculations based on {data.birthday} and the full name {data.first_name} {data.last_name}. Start with the Life Path Number—break down the birthdate into individual digits, add them, and reduce to a single digit or master number (11, 22, 33), showing each step once. Then calculate the Expression/Destiny Number using Pythagorean values for each letter. Conclude with the current Pinnacle Cycle, if possible. Do not recalculate or restate values after you finish the breakdown.\n"
          f"3. A Chinese Zodiac breakdown with animal sign traits and how they combine with their specific Western signs.\n"
-         f"4. An extremely detailed month-by-month forecast for the next 3 months starting from {current_date}, covering Love, Career, and Personal Growth while going into an excruciating amount of detail and accuracy that might even scare the reader in a good way.\n"
+         f"4. An extremely detailed month-by-month forecast for the next 3 months starting from {current_date}, covering Love - one for singles and one for people in relationships, Career, and Personal Growth while going into an excruciating amount of detail and accuracy that might even scare the reader in a good way.\n"
          f"5. Finish with empowering, heartfelt closing guidance and insight that encourages the user to embrace their unique gifts and tell them where they could be headed.\n\n"
          f"- Full name: {data.first_name} {data.last_name}\n"
          f"- Date of birth: {data.birthday}\n\n"
