@@ -43,7 +43,7 @@ async def generate_reading(data: UserInput):
     
     f"3. **Celestial Animal Wisdom** — Describe the user’s Chinese Zodiac sign with personality insights and how it blends with their Western Sun sign. Highlight rare traits, internal conflicts, or superpowers from this fusion.\n\n"
     
-    f"4. **3-Month Forecast: Your Cosmic Weather** — Provide an emotionally intelligent, scarily accurate month-by-month forecast for the next 3 months starting from {current_date}. Include predictions and symbolic themes for:\n"
+    f"4. **3-Month Forecast: Your Cosmic Weather** — Provide an emotionally intelligent, scarily accurate month-by-month forecast for the next 3 months starting from {current_date}. Be detailed, precise and concise. Give the reader juicy info on what to expect dring these times for the respective topic listed. Include predictions and symbolic themes for:\n"
     f"   - **Love**: One message for singles, one for those in a relationship.\n"
     f"   - **Career & Calling**: Show them what they’re building or should be focused on.\n"
     f"   - **Personal Growth**: Deliver insights that inspire action, reflection, or change.\n"
